@@ -3,33 +3,35 @@
 
 
 # 摘      要
+
 ##AVPlayer是用于管理媒体资产的播放和定时控制器对象它提供了控制播放器的接口，如它可以在媒体的时限内播放，暂停，和改变播放的速度，并有定位各个动态点的能力。可以使用AVPlayer来播放本地和远程的视频媒体文件，如QuickTime影片和MP3音频文件，以及视听媒体使用HTTP流媒体直播服务。
 
 ###关键词：m3u8流媒体， AVPlayer， iOS视频播放器，自定义播放。  
 
-##1 AVPlayer播放的两个层
-###1.1 一个普通播放器的组成
+## 1 AVPlayer播放的两个层
+### 1.1 一个普通播放器的组成
+
 ![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/1.png?raw=true)
 
-###1.2 创建播放层视图类
-####使用AVPlayer需导入AVFoundation框架
+### 1.2 创建播放层视图类
+#### 使用AVPlayer需导入AVFoundation框架
 
 ```
     import AVFoundation
 ```
-####创建类VideoPlayerView。
+#### 创建类VideoPlayerView。
 
 ```
     internal class VedioPlayerView : UIView {
     ....
     }
 ```
-####播放器的初始化，在VedioPlayerView里创建AVPLayerLayer并把AVPlayer加入
+#### 播放器的初始化，在VedioPlayerView里创建AVPLayerLayer并把AVPlayer加入
 
 ```
     playerLayer = AVPlayerLayer.init(player: self.playerPub)
 ```
-####注意这里也可以先加AVURLAsset，本例未使用这个方式，self.asset可以记录缓存大小，而使用AVURLAsset初始化URL代码太复杂。
+#### 注意这里也可以先加AVURLAsset，本例未使用这个方式，self.asset可以记录缓存大小，而使用AVURLAsset初始化URL代码太复杂。
 #### 接着设置下播放窗口大小为试图大小并加到视图的层上。
 
 ```
@@ -73,7 +75,7 @@
     @IBOutlet weak internal var videoPlaySlider: UISlider! //记录播放时间的字典
     @IBOutlet weak internal var lightSlider: UISlider! //记录播放时间的字典
 ```
-## 2  AVPlayer的功能和组成
+## 2 AVPlayer的功能和组成
 #### 基于AVPlayer封装的轻量级播放器,可以播放本地网络视频,易于定制，适合初学者学习打造属于自己的视频播放器
 ### 2.1 初始化播放器和配置
 #### 2.1.1播放器的初始化
