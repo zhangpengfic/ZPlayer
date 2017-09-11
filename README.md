@@ -9,8 +9,7 @@
 
 ##1 AVPlayer播放的两个层
 ###1.1 一个普通播放器的组成
-![](/Users/alfred/Desktop/1.png
-)
+![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/1.png?raw=true)
 ###1.2 创建播放层视图类
 ####使用AVPlayer需导入AVFoundation框架
 
@@ -56,7 +55,7 @@
 ```
 ### 1.3 创建控制层视图类
 #### 控制层在视频视图层的上面一层，用来控制视频的播放，如图
-![](/Users/alfred/Desktop/2.png
+![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/2.png?raw=true
 )
 #### 创建类ControlView。控制层在视频视图的上面一层，用来控制视频的播放
 
@@ -146,7 +145,7 @@
     fatherView.addSubview(self) //把播放器加回原先fatherView竖屏的窗口
 ```
 ### 2.3 进度条
-![](/Users/alfred/Desktop/3.png
+![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/3.png?raw=true
 )
 #### 刷新进度条包括，1当前时间显示、2进度百分比。在播放器里添加一个观察者每一秒钟监听一次并刷新进度。
 ```
@@ -209,7 +208,7 @@
 ```
 ### 3.3 手势的调用
 #### 在手势添加在播放视图上。方法和属性添加到控制器中。
-![](/Users/alfred/Desktop/4.png
+![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/4.png?raw=true
 )
 #### 在视图控制器ViewController加入单击播放窗口出现控制视图，再次点击控制视图消失。
 ```
@@ -228,6 +227,10 @@
 ```
 ### 3.4 分享等自定义其他功能
 #### 在视图控制器ViewController拖入分享图标的方法让ShareView弹出到控制器的view视图的最上层。其他功能的加法以此类推。
+![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/5.png?raw=true
+)![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/6.png?raw=true
+)
+
 ```
     @IBOutlet weak var ShareView: VideoDetailShareView!
     @IBAction func shareButtonClicked(_ sender: UIButton) {
@@ -238,5 +241,7 @@
 ## 4 结束语
 #### 表述能力有限，如果大家喜欢的话，希望进入github网址star一下
 #### 我的github：https://github.com/zhangpengfic/ZPlayer 
+
+
 
 
