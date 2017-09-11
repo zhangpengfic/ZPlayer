@@ -10,6 +10,7 @@
 ##1 AVPlayer播放的两个层
 ###1.1 一个普通播放器的组成
 ![](https://github.com/zhangpengfic/ZPlayer/blob/master/pic/1.png?raw=true)
+
 ###1.2 创建播放层视图类
 ####使用AVPlayer需导入AVFoundation框架
 
