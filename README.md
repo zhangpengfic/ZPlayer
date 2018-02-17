@@ -242,8 +242,8 @@
 ```
 
 ## 4 结束语
-#### 表述能力有限，如果大家喜欢的话，希望进入github网址star一下
-#### 我的github：https://github.com/zhangpengfic/ZPlayer 
+#### 表述能力有限，此致！
+#### 查看源码github：https://github.com/zhangpengfic/ZPlayer 
 
 
 
