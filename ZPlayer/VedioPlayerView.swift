@@ -115,7 +115,7 @@ class VedioPlayerView: UIView {
         didSet{
             playerLayer = AVPlayerLayer.init(player: self.playerPub)
             playerLayer.frame = self.bounds
-            playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
             self.layer.addSublayer(playerLayer)
             
             self.addSubview(controlVView)
@@ -200,7 +200,7 @@ class VedioPlayerView: UIView {
         //获取字幕
         let item = playerPub.currentItem
         let asset = item?.asset
-        let group = asset?.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristicLegible)
+        let group = asset?.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible)
         if group != nil {
             for item in (group?.options)! {
                 Debug.log(item)
@@ -254,7 +254,7 @@ class VedioPlayerView: UIView {
     
     //MARK: - notification#Selector
     var backPlayModel = true
-    func appWillResignActive(){
+    @objc func appWillResignActive(){
         Debug.log("appWillResignActive")
         if backPlayModel {
             playerLayer.player = nil
@@ -262,7 +262,7 @@ class VedioPlayerView: UIView {
             playerPub.pause()
         }
     }
-    func appDidBecomeActive() {
+    @objc func appDidBecomeActive() {
         Debug.log("appDidBecomeActive")
         if backPlayModel {
             playerLayer.player = playerPub
@@ -270,7 +270,7 @@ class VedioPlayerView: UIView {
             // playerPub.play()
         }
     }
-    func deviceDidRotate(notification:NSNotification){
+    @objc func deviceDidRotate(notification:NSNotification){
         
         if UIDevice.current.orientation.rawValue == 5 || UIDevice.current.orientation.rawValue == 6{
             return
@@ -329,7 +329,7 @@ class VedioPlayerView: UIView {
     
     var indexPath = 0
     var playEndBlock:((Int)->())!
-    func videoPlayEnd(){
+    @objc func videoPlayEnd(){
         Debug.log("videoPlayEnd")
         if playEndBlock != nil {
             
